@@ -12,7 +12,7 @@ function DashboardNav() {
   return (
     <div className="flex justify-between px-[3rem] py-[1rem] bg-white ">
       <div>
-        <h1 className='text-[24px] leading-[29.05px] font-[700] flex items-center gap-4 '>Verifiers <span className='text-[12px] font-[400] leading-[16.56px] text-[#039BF0] bg-[FEFAFE] '>{dashbordCount}</span> </h1>
+        <h1 className='text-[24px] leading-[29.05px] font-[700] flex items-center gap-4 '>Verifiers <span className='text-[12px] font-[400] leading-[16.56px] text-[#039BF0] bg-[#F2FAFF] p-2 rounded-[50%] '>{dashbordCount}</span> </h1>
       </div>
       <div className="flex items-center gap-4 ">
         <div><img src={Alert} alt="" /></div>
