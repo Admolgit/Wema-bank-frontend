@@ -89,7 +89,7 @@ function DashboardData() {
                   className={
                     user.status === 'Active'
                       ? 'w-[50px] p-1 text-[#27A713] bg-[#27A7131A] rounded-[5px] '
-                      : user.status === 'Deactivated' ? 'bg-[#EB4335] w-[100px] p-1 rounded-[5px] text-center flex justify-center items-center text-white' : 'bg-[#F2C94C] p-1 w-[140px] text-center flex justify-center items-center text-white rounded-[5px]'
+                      : user.status === 'Deactivated' ? 'bg-[#FF00001A] w-[100px] p-1 rounded-[5px] text-center flex justify-center items-center text-[#EB4335]' : 'bg-[#FF99001A] p-1 w-[140px] text-center flex justify-center items-center text-[#FF9900] rounded-[5px]'
                   }
                 >
                   {user.status}
