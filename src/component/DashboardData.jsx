@@ -70,12 +70,12 @@ function DashboardData() {
           </tr>
           <hr className=" mx-[3rem]" />
         </thead>
-        <tbody>
+        <tbody className='' >
           {Datas.map((user) => (
             <>
               <tr
                 key={user.id}
-                className="relative grid grid-cols-8 gap-[5rem] items-center bg-white border-bottom-2 px-[20px] py-[10px] text-[12px] border leading-[16.94px] font-[700] mx-[3rem] text-black "
+                className=" grid grid-cols-8 gap-[5rem] items-center bg-white border-bottom-2 px-[20px] py-[10px] text-[12px] border leading-[16.94px] font-[700] mx-[3rem] text-black "
               >
                 <td>
                   <img src={Rectangle} alt="" />
@@ -95,7 +95,7 @@ function DashboardData() {
                   {user.status}
                 </td>
                 <td
-                  className=" cursor-pointer w-[150px]"
+                  className="relative cursor-pointer w-[150px]"
                   onClick={() => handleClick(Number(user.id))}
                 >
                   <img src={Dots} alt="" />
