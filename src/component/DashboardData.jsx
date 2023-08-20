@@ -32,8 +32,6 @@ function DashboardData() {
     setCurrentPage(page);
   };
 
-  console.log(data);
-
   if (dataCount === 0)
     return (
       <div className="ml-[4rem] text-treColor2 mt-[3rem]">No data found</div>
@@ -48,8 +46,6 @@ function DashboardData() {
   };
 
   const Datas = Paginate(data, currentPage, count);
-
-  // className="w-[50px] p-2 text-[#27A713] bg-[#27A7131A] "
 
   return (
     <div>
