@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Register from '../pages/Register';
-import { ToastContainer } from 'react-toastify';
 import Login from '../pages/Login';
 import AuthRoute from '../utils/AuthRoute';
 import PrivateRoute from '../utils/PrivateRoute';
@@ -11,7 +10,6 @@ import MainPage from '../component/MainPage';
 function routes() {
   return (
     <div>
-      <ToastContainer />
       <Routes>
       <Route path="*" element={<NotFound />} />
         <Route path="" element={<AuthRoute />}>
