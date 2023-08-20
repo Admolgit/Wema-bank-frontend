@@ -15,7 +15,7 @@ function DashboardDropDown(props) {
   }
 
   return (
-    <div className='absolute text-[#1A1A1A] top-[0rem] z-20 bg-white  right-12 p-4 text-[14px] font-500'>
+    <div className='absolute text-[#1A1A1A] top-[18rem] z-20 bg-white  right-12 p-4 text-[14px] font-500'>
       <div className="flex gap-6 items-center">
         <p className="text-[12px] flex gap-[5rem] items-center ">All <span><img src={Down} alt="" /></span> </p>
       </div>

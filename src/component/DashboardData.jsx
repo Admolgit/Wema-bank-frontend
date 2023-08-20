@@ -7,7 +7,7 @@ import { Paginate } from './Pagination/Paginate';
 import DashboardDropDown from './DashboardDropDown';
 
 function DashboardData() {
-  const [dropDown, setDropDown] = useState(false)
+  const [dropDown, setDropDown] = useState(false);
   const [count] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -39,16 +39,17 @@ function DashboardData() {
       <div className="ml-[4rem] text-treColor2 mt-[3rem]">No data found</div>
     );
 
-    const handleClick = (id) => {
-      console.log(id, "HERE")
-      const singleData = data.find((a) => a.id === Number(id));
-      // setUserRaffle(singleData);
-      if (singleData.id === id) {
-        setDropDown(!dropDown);
-      }
-    };
+  const handleClick = (id) => {
+    const singleData = data.find((a) => a.id === Number(id));
+
+    if (singleData.id === id) {
+      setDropDown(!dropDown);
+    }
+  };
 
   const Datas = Paginate(data, currentPage, count);
+
+  // className="w-[50px] p-2 text-[#27A713] bg-[#27A7131A] "
 
   return (
     <div>
@@ -71,33 +72,44 @@ function DashboardData() {
         <tbody>
           {Datas.map((user) => (
             <>
-            <tr
-              key={user.id}
-              className="relative grid grid-cols-8 gap-[5rem] items-center bg-white border-bottom-2 px-[20px] py-[10px] text-[12px] border leading-[16.94px] font-[700] mx-[3rem] text-black "
-            >
-              <td>
-                <img src={Rectangle} alt="" />
-              </td>
-              <td className="w-[150px] ">{user.firstName}</td>
-              <td className="w-[150px] ">{user.lastName}</td>
-              <td className="w-[150px] ">{user.location}</td>
-              <td className="w-[150px] ">{user.patner}</td>
-              <td className="w-[150px] ">{user.phoneNumber}</td>
-              <td className="w-[150px] ">{user.status}</td>
-              <td className=" cursor-pointer w-[150px]" onClick={() => handleClick(Number(user.id))}>
-                <img src={Dots} alt="" />
-              </td>
-            </tr>
-            {Number(user.id) === Number(user.id)
-              ? dropDown && <DashboardDropDown data={user} />
-              : null}
+              <tr
+                key={user.id}
+                className="relative grid grid-cols-8 gap-[5rem] items-center bg-white border-bottom-2 px-[20px] py-[10px] text-[12px] border leading-[16.94px] font-[700] mx-[3rem] text-black "
+              >
+                <td>
+                  <img src={Rectangle} alt="" />
+                </td>
+                <td className="w-[150px] ">{user.firstName}</td>
+                <td className="w-[150px] ">{user.lastName}</td>
+                <td className="w-[150px] ">{user.location}</td>
+                <td className="w-[150px] ">{user.patner}</td>
+                <td className="w-[150px] ">{user.phoneNumber}</td>
+                <td
+                  className={
+                    user.status === 'Active'
+                      ? 'w-[50px] p-1 text-[#27A713] bg-[#27A7131A] rounded-[5px] '
+                      : user.status === 'Deactivated' ? 'bg-[#EB4335] w-[100px] p-1 rounded-[5px] text-center flex justify-center items-center text-white' : 'bg-[#F2C94C] p-1 w-[140px] text-center flex justify-center items-center text-white rounded-[5px]'
+                  }
+                >
+                  {user.status}
+                </td>
+                <td
+                  className=" cursor-pointer w-[150px]"
+                  onClick={() => handleClick(Number(user.id))}
+                >
+                  <img src={Dots} alt="" />
+                </td>
+              </tr>
+              {Number(user.id) === Number(user.id)
+                ? dropDown && <DashboardDropDown data={user} />
+                : null}
             </>
           ))}
           <Pagination
-          itemsCount={dataCount}
-          pageSize={count}
-          currentPage={currentPage}
-          onPageChange={handleChange}
+            itemsCount={dataCount}
+            pageSize={count}
+            currentPage={currentPage}
+            onPageChange={handleChange}
           />
         </tbody>
       </table>

@@ -37,7 +37,6 @@ const DashboardMenu = () => {
           <nav className={sidebar ? "fixed bg-[] flex items-center h-[100vh] ml-[2rem] top-0 z-50 duration-700 " : "fixed bg-[] flex justify-center items-center h-[100vh] top-0 z-50 duration-700"}>
             <ul className='w-[100%]' onClick={showSidebar}>
               <div className="text-center pb-[3rem] mt-[-23rem] ">
-                {/* <h1 className="text-[2em] leading-9 font-extrabold font-sans text-[#263555] ">RETRO</h1> */}
                 <img className=" " src={LOGO} alt="" />
               </div>
               {SideBarData.map((item, index) => {
@@ -46,7 +45,7 @@ const DashboardMenu = () => {
                     key={index}
                     className={item.title === clicked ? ' pt-[1rem] pb-[1rem] bg-[#489494] text-[#A8B0E7] duration-300 bg-[#F2FAFF] ' : ' pt-[1rem] pb-[1rem] '}
                   >
-                    <Link className={item.title === clicked ? ' text-[#A8B0E7] flex items-center gap-2 ' : ' text-[#AFB6BC] flex items-center gap-2 '} to={item.path} onClick={() => setClicked(item.title)}>
+                    <Link className={item.title === clicked ? ' text-[#AFB6BC] flex items-center gap-2 ' : ' text-[#AFB6BC] flex items-center gap-2 '} to={item.path} onClick={() => setClicked(item.title)}>
                       <NavLink className='flex items-center gap-4 text-[14px] text-[#1A1619]' to={item.path}>
                       <img src={item.icon} alt="" />
                       <span className=''>{item.title}</span>
