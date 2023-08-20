@@ -4,6 +4,7 @@ import Search from "../assets/search.svg";
 import Add from "../assets/Icon-add.svg";
 
 function DashboardHeader() {
+
   return (
     <div className="flex justify-between mx-[3rem] my-[2rem] ">
       <div className="bg-white ">

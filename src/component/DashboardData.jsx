@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Rectangle from '../assets/Icon-rectangle.svg';
-import { useGetDataMutation } from '../redux/actions/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useGetDataMutation } from '../redux/actions/dashboardSlice';
+import { setDashboardCredentials } from '../redux/slices/dashboardSlice';
 import Dots from '../assets/more.svg';
 import Pagination from './Pagination/Pagination';
 import { Paginate } from './Pagination/Paginate';
@@ -14,6 +16,8 @@ function DashboardData() {
   const [data, setData] = useState([]);
   const [getData, { isLoading }] = useGetDataMutation();
 
+  const dispatch = useDispatch()
+
   let dataCount = data.length;
 
   useEffect(() => {
@@ -21,12 +25,13 @@ function DashboardData() {
       try {
         const res = await getData().unwrap();
         setData(res);
+        dispatch(setDashboardCredentials(res));
       } catch (error) {
         console.log(error);
       }
     };
     fetchUsers();
-  }, [currentPage]);
+  }, [dispatch, getData]);
 
   const handleChange = (page) => {
     setCurrentPage(page);

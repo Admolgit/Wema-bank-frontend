@@ -14,11 +14,6 @@ const authSlice = createSlice({
       state.user = action.payload;
       Cookies.set("user", JSON.stringify(action.payload), { expires: 1 }, { sameSite: "strict" });
     },
-    setDashboardCredentials: (state, action) => {
-      console.log(action.payload, "action.payload");
-      state.user = action.payload;
-      Cookies.set("user", JSON.stringify(action.payload), { expires: 1 }, { sameSite: "strict" });
-    },
     clearUserCredentials: (state, action) => {
       state.user = null;
       Cookies.remove("user", { path: '' });
@@ -26,6 +21,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUserCredentials, clearUserCredentials, setDashboardCredentials } = authSlice.actions;
+export const { setUserCredentials, clearUserCredentials } = authSlice.actions;
 
 export default authSlice.reducer;
