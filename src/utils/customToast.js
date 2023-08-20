@@ -30,6 +30,7 @@ export const customToast = {
         'text-[#8C53FD] text-[14px] bg-[#ffffff] rounded-[8px] border-1 border-[#8C53FD] toast-info-container-after',
       progressClassName: css({
         background: '#8C53FD',
+        
       }),
     });
   },

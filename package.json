@@ -26,8 +26,8 @@
   },
   "scripts": {
     "json": "json-server --watch ./src/mock-datas/userData.json --port 8000",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node api.js && react-scripts start",
+    "build": "node api.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
